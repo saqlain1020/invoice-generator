@@ -146,6 +146,43 @@
   box-shadow: 0 0 0 3px rgba(26, 109, 255, 0.1);
 }
 
+/* ─── Title Selector ─── */
+
+.title-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.title-chip {
+  padding: 8px 18px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.title-chip:hover {
+  border-color: #1f96e0;
+  color: #1f96e0;
+}
+
+.title-chip.active {
+  background: #1f96e0;
+  color: #fff;
+  border-color: #1f96e0;
+}
+
+.title-chip.custom {
+  border-style: dashed;
+  font-size: 13px;
+}
+
 /* ─── Logo Selector ─── */
 
 .logo-selector {

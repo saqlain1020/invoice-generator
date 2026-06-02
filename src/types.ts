@@ -7,6 +7,7 @@ export interface InvoiceItem {
 }
 
 export interface InvoiceData {
+  documentTitle: string;
   companyName: string;
   website: string;
   billedTo: string;

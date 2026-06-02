@@ -113,6 +113,39 @@ export function InvoiceForm({ invoice, setInvoice }: Props) {
           </svg>
           Branding
         </h2>
+        <div className="form-group" style={{ marginBottom: '16px' }}>
+          <label>Document Title</label>
+          <div className="title-selector">
+            {['Invoice', 'Quotation', 'Receipt', 'Estimate'].map((title) => (
+              <button
+                key={title}
+                type="button"
+                className={`title-chip ${invoice.documentTitle === title ? 'active' : ''}`}
+                onClick={() => updateField('documentTitle', title)}
+              >
+                {title}
+              </button>
+            ))}
+          </div>
+          {!['Invoice', 'Quotation', 'Receipt', 'Estimate'].includes(invoice.documentTitle) && (
+            <input
+              type="text"
+              value={invoice.documentTitle}
+              onChange={(e) => updateField('documentTitle', e.target.value)}
+              placeholder="Custom title"
+              style={{ marginTop: '8px' }}
+            />
+          )}
+          <button
+            type="button"
+            className={`title-chip custom ${!['Invoice', 'Quotation', 'Receipt', 'Estimate'].includes(invoice.documentTitle) ? 'active' : ''}`}
+            onClick={() => updateField('documentTitle', '')}
+            style={{ marginTop: '8px' }}
+          >
+            Custom...
+          </button>
+        </div>
+
         <div className="form-grid">
           <div className="form-group">
             <label>Company Name</label>

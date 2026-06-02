@@ -19,7 +19,7 @@ export function InvoicePreview({ invoice }: Props) {
 
     const opt = {
       margin: 0,
-      filename: `Invoice-${invoice.invoiceNumber}.pdf`,
+      filename: `${invoice.documentTitle || 'Invoice'}-${invoice.invoiceNumber}.pdf`,
       image: { type: "jpeg", quality: 0.98 },
       html2canvas: { scale: 2, useCORS: true, letterRendering: true },
       jsPDF: { unit: "in", format: "a4", orientation: "portrait" as const },
@@ -53,7 +53,7 @@ export function InvoicePreview({ invoice }: Props) {
         <div className="inv-header">
           <div className="inv-header-left">
             <h1 className="inv-title" style={{ color: accentColor }}>
-              Invoice
+              {invoice.documentTitle}
             </h1>
             <p className="inv-company">{invoice.companyName}</p>
           </div>

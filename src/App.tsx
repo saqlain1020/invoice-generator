@@ -5,6 +5,7 @@ import type { InvoiceData } from "./types";
 import "./App.css";
 
 const defaultInvoice: InvoiceData = {
+  documentTitle: "Invoice",
   companyName: "KickOff Media",
   website: "https://kickoffmedia.co",
   billedTo: "Merline",
