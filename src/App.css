@@ -743,6 +743,240 @@
   font-style: italic;
 }
 
+/* ─── Presets ─── */
+
+.presets-section {
+  border: 1.5px dashed #d1d5db;
+  background: #fafbfc;
+}
+
+.presets-actions {
+  margin-bottom: 16px;
+}
+
+.presets-btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-preset-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.btn-preset-action:hover {
+  border-color: #1f96e0;
+  color: #1f96e0;
+}
+
+.btn-preset-action.primary {
+  background: #1f96e0;
+  color: #fff;
+  border-color: #1f96e0;
+}
+
+.btn-preset-action.primary:hover {
+  background: #1780c4;
+}
+
+.preset-save-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.preset-save-row input {
+  flex: 1;
+  padding: 9px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1a1a2e;
+  background: #fff;
+  outline: none;
+  font-family: inherit;
+}
+
+.preset-save-row input:focus {
+  border-color: #1f96e0;
+  box-shadow: 0 0 0 3px rgba(31, 150, 224, 0.1);
+}
+
+.btn-preset-save {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #1f96e0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.btn-preset-save:hover {
+  background: #1780c4;
+}
+
+.btn-preset-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-preset-cancel {
+  padding: 9px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-preset-cancel:hover {
+  background: #f3f4f6;
+}
+
+.presets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preset-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: box-shadow 0.15s;
+}
+
+.preset-card:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.preset-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.preset-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preset-meta {
+  font-size: 12px;
+  color: #9ca3af;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preset-card-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-preset-load {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border: 1.5px solid #1f96e0;
+  border-radius: 6px;
+  background: #eff8ff;
+  color: #1f96e0;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-preset-load:hover {
+  background: #1f96e0;
+  color: #fff;
+}
+
+.btn-preset-export {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.btn-preset-export:hover {
+  border-color: #1f96e0;
+  color: #1f96e0;
+}
+
+.btn-preset-delete {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #fff;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-preset-delete:hover {
+  border-color: #fecaca;
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.btn-preset-delete.confirm {
+  border-color: #dc2626;
+  color: #fff;
+  background: #dc2626;
+  animation: pulse-delete 0.3s ease;
+}
+
+@keyframes pulse-delete {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.presets-empty {
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+  padding: 12px 0;
+}
+
 /* ─── Responsive ─── */
 
 @media (max-width: 640px) {

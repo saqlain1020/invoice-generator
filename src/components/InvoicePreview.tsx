@@ -29,6 +29,7 @@ export function InvoicePreview({ invoice }: Props) {
   };
 
   const accentColor = invoice.accentColor || "#1a6dff";
+  const docLabel = invoice.documentTitle || 'Document';
 
   return (
     <div className="preview-wrapper">
@@ -75,14 +76,16 @@ export function InvoicePreview({ invoice }: Props) {
         {/* Billing Info */}
         <div className="inv-billing" style={{ backgroundColor: accentColor }}>
           <div className="inv-billing-left">
-            <p>
-              <strong>BILLED TO: {invoice.billedTo}</strong>
-            </p>
-            <p>Address: {invoice.address}</p>
+            {invoice.billedTo && (
+              <p><strong>BILLED TO: {invoice.billedTo}</strong></p>
+            )}
+            {invoice.address && (
+              <p>Address: {invoice.address}</p>
+            )}
           </div>
           <div className="inv-billing-right">
-            <p>Invoice # {invoice.invoiceNumber}</p>
-            <p>Invoice Date: {invoice.invoiceDate}</p>
+            {invoice.invoiceNumber && <p>{docLabel} # {invoice.invoiceNumber}</p>}
+            {invoice.invoiceDate && <p>{docLabel} Date: {invoice.invoiceDate}</p>}
           </div>
         </div>
 

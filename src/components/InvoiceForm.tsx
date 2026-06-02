@@ -1,5 +1,6 @@
 import { useRef, useMemo } from 'react';
 import type { InvoiceData, InvoiceItem } from '../types';
+import { PresetsManager } from './PresetsManager';
 
 const logoModules = import.meta.glob<string>('../assets/logos/*', {
   eager: true,
@@ -268,7 +269,7 @@ export function InvoiceForm({ invoice, setInvoice }: Props) {
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
             <circle cx="12" cy="7" r="4" />
           </svg>
-          Client & Invoice Details
+          Client & {invoice.documentTitle || 'Document'} Details
         </h2>
         <div className="form-grid">
           <div className="form-group">
@@ -292,7 +293,7 @@ export function InvoiceForm({ invoice, setInvoice }: Props) {
         </div>
         <div className="form-grid">
           <div className="form-group">
-            <label>Invoice #</label>
+            <label>{invoice.documentTitle || 'Document'} #</label>
             <input
               type="text"
               value={invoice.invoiceNumber}
@@ -301,7 +302,7 @@ export function InvoiceForm({ invoice, setInvoice }: Props) {
             />
           </div>
           <div className="form-group">
-            <label>Invoice Date</label>
+            <label>{invoice.documentTitle || 'Document'} Date</label>
             <input
               type="text"
               value={invoice.invoiceDate}
@@ -465,6 +466,8 @@ export function InvoiceForm({ invoice, setInvoice }: Props) {
           />
         </div>
       </section>
+
+      <PresetsManager invoice={invoice} setInvoice={setInvoice} />
     </div>
   );
 }

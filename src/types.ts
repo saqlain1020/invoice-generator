@@ -22,3 +22,10 @@ export interface InvoiceData {
   logo: string | null;
   accentColor: string;
 }
+
+export interface InvoicePreset {
+  id: string;
+  name: string;
+  createdAt: number;
+  data: InvoiceData;
+}
